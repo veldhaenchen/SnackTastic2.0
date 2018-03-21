@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F766803B1F40EE9000DB5BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766803A1F40EE9000DB5BDB /* AppDelegate.swift */; };
+		F766803D1F40EE9000DB5BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766803C1F40EE9000DB5BDB /* ViewController.swift */; };
+		F76680431F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F76680411F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld */; };
+		F76680451F40EE9000DB5BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76680441F40EE9000DB5BDB /* Assets.xcassets */; };
+		F76680481F40EE9000DB5BDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76680461F40EE9000DB5BDB /* LaunchScreen.storyboard */; };
+		F76680531F40EE9000DB5BDB /* SnackTastic2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76680521F40EE9000DB5BDB /* SnackTastic2_0Tests.swift */; };
+		F766805E1F40EE9000DB5BDB /* SnackTastic2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766805D1F40EE9000DB5BDB /* SnackTastic2_0UITests.swift */; };
+		F766807D1F40EF3300DB5BDB /* MathematicShit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76680771F40EF3300DB5BDB /* MathematicShit.swift */; };
+		F766807E1F40EF3300DB5BDB /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76680781F40EF3300DB5BDB /* ShowAllViewController.swift */; };
+		F766807F1F40EF3300DB5BDB /* Snacklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76680791F40EF3300DB5BDB /* Snacklist.swift */; };
+		F76680801F40EF3300DB5BDB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766807A1F40EF3300DB5BDB /* Animation.swift */; };
+		F766808B1F40EF8600DB5BDB /* Einkaufsliste.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76680841F40EF8600DB5BDB /* Einkaufsliste.swift */; };
+		F76680921F40EFA400DB5BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76680911F40EFA400DB5BDB /* Main.storyboard */; };
+		F78A87991F4C3E690078540C /* GetInternetShit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78A87981F4C3E690078540C /* GetInternetShit.swift */; };
+		F7E3CBCC1F4C500400B08D27 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E3CBCB1F4C500400B08D27 /* InfoViewController.swift */; };
+		F7E5D4A81F4EE55B00E2865D /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D49F1F4EE55B00E2865D /* Back.png */; };
+		F7E5D4A91F4EE55B00E2865D /* MaxVolume.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A01F4EE55B00E2865D /* MaxVolume.png */; };
+		F7E5D4AA1F4EE55B00E2865D /* NoMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A11F4EE55B00E2865D /* NoMusic.png */; };
+		F7E5D4AB1F4EE55B00E2865D /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A21F4EE55B00E2865D /* Picture.png */; };
+		F7E5D4AC1F4EE55B00E2865D /* Right.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A31F4EE55B00E2865D /* Right.png */; };
+		F7E5D4AD1F4EE55B00E2865D /* Shopping Cart Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A41F4EE55B00E2865D /* Shopping Cart Empty.png */; };
+		F7E5D4AE1F4EE55B00E2865D /* Shopping Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A51F4EE55B00E2865D /* Shopping Cart.png */; };
+		F7E5D4AF1F4EE55B00E2865D /* Snax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A61F4EE55B00E2865D /* Snax.mp3 */; };
+		F7E5D4B01F4EE55B00E2865D /* Wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = F7E5D4A71F4EE55B00E2865D /* Wrong.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F766804F1F40EE9000DB5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F766802F1F40EE9000DB5BDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F76680361F40EE9000DB5BDB;
+			remoteInfo = SnackTastic2.0;
+		};
+		F766805A1F40EE9000DB5BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F766802F1F40EE9000DB5BDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F76680361F40EE9000DB5BDB;
+			remoteInfo = SnackTastic2.0;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F76680371F40EE9000DB5BDB /* SnackTastic2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackTastic2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F766803A1F40EE9000DB5BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F766803C1F40EE9000DB5BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F76680421F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnackTastic2_0.xcdatamodel; sourceTree = "<group>"; };
+		F76680441F40EE9000DB5BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F76680471F40EE9000DB5BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F76680491F40EE9000DB5BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F766804E1F40EE9000DB5BDB /* SnackTastic2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackTastic2.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76680521F40EE9000DB5BDB /* SnackTastic2_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackTastic2_0Tests.swift; sourceTree = "<group>"; };
+		F76680541F40EE9000DB5BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76680591F40EE9000DB5BDB /* SnackTastic2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnackTastic2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F766805D1F40EE9000DB5BDB /* SnackTastic2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackTastic2_0UITests.swift; sourceTree = "<group>"; };
+		F766805F1F40EE9000DB5BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76680771F40EF3300DB5BDB /* MathematicShit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MathematicShit.swift; path = ../MathematicShit.swift; sourceTree = "<group>"; };
+		F76680781F40EF3300DB5BDB /* ShowAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAllViewController.swift; path = ../ShowAllViewController.swift; sourceTree = "<group>"; };
+		F76680791F40EF3300DB5BDB /* Snacklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Snacklist.swift; path = ../Snacklist.swift; sourceTree = "<group>"; };
+		F766807A1F40EF3300DB5BDB /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ../Animation.swift; sourceTree = "<group>"; };
+		F76680841F40EF8600DB5BDB /* Einkaufsliste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Einkaufsliste.swift; sourceTree = "<group>"; };
+		F76680911F40EFA400DB5BDB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F78A87981F4C3E690078540C /* GetInternetShit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInternetShit.swift; sourceTree = "<group>"; };
+		F7E3CBCB1F4C500400B08D27 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F7E5D49F1F4EE55B00E2865D /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = Bilder/Back.png; sourceTree = "<group>"; };
+		F7E5D4A01F4EE55B00E2865D /* MaxVolume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MaxVolume.png; path = Bilder/MaxVolume.png; sourceTree = "<group>"; };
+		F7E5D4A11F4EE55B00E2865D /* NoMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoMusic.png; path = Bilder/NoMusic.png; sourceTree = "<group>"; };
+		F7E5D4A21F4EE55B00E2865D /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Picture.png; path = Bilder/Picture.png; sourceTree = "<group>"; };
+		F7E5D4A31F4EE55B00E2865D /* Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Right.png; path = Bilder/Right.png; sourceTree = "<group>"; };
+		F7E5D4A41F4EE55B00E2865D /* Shopping Cart Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Shopping Cart Empty.png"; path = "Bilder/Shopping Cart Empty.png"; sourceTree = "<group>"; };
+		F7E5D4A51F4EE55B00E2865D /* Shopping Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Shopping Cart.png"; path = "Bilder/Shopping Cart.png"; sourceTree = "<group>"; };
+		F7E5D4A61F4EE55B00E2865D /* Snax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Snax.mp3; path = Bilder/Snax.mp3; sourceTree = "<group>"; };
+		F7E5D4A71F4EE55B00E2865D /* Wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Wrong.png; path = Bilder/Wrong.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F76680341F40EE9000DB5BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F766804B1F40EE9000DB5BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76680561F40EE9000DB5BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F719C0A31F45F8A30086C256 /* Bilder & Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F7E5D49F1F4EE55B00E2865D /* Back.png */,
+				F7E5D4A01F4EE55B00E2865D /* MaxVolume.png */,
+				F7E5D4A11F4EE55B00E2865D /* NoMusic.png */,
+				F7E5D4A21F4EE55B00E2865D /* Picture.png */,
+				F7E5D4A31F4EE55B00E2865D /* Right.png */,
+				F7E5D4A41F4EE55B00E2865D /* Shopping Cart Empty.png */,
+				F7E5D4A51F4EE55B00E2865D /* Shopping Cart.png */,
+				F7E5D4A61F4EE55B00E2865D /* Snax.mp3 */,
+				F7E5D4A71F4EE55B00E2865D /* Wrong.png */,
+			);
+			name = "Bilder & Sound";
+			path = SnackTastic2.0;
+			sourceTree = "<group>";
+		};
+		F766802E1F40EE9000DB5BDB = {
+			isa = PBXGroup;
+			children = (
+				F719C0A31F45F8A30086C256 /* Bilder & Sound */,
+				F76680391F40EE9000DB5BDB /* SnackTastic2.0 */,
+				F76680511F40EE9000DB5BDB /* SnackTastic2.0Tests */,
+				F766805C1F40EE9000DB5BDB /* SnackTastic2.0UITests */,
+				F76680381F40EE9000DB5BDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F76680381F40EE9000DB5BDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F76680371F40EE9000DB5BDB /* SnackTastic2.0.app */,
+				F766804E1F40EE9000DB5BDB /* SnackTastic2.0Tests.xctest */,
+				F76680591F40EE9000DB5BDB /* SnackTastic2.0UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F76680391F40EE9000DB5BDB /* SnackTastic2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				F76680911F40EFA400DB5BDB /* Main.storyboard */,
+				F76680841F40EF8600DB5BDB /* Einkaufsliste.swift */,
+				F76680771F40EF3300DB5BDB /* MathematicShit.swift */,
+				F78A87981F4C3E690078540C /* GetInternetShit.swift */,
+				F76680781F40EF3300DB5BDB /* ShowAllViewController.swift */,
+				F76680791F40EF3300DB5BDB /* Snacklist.swift */,
+				F7E3CBCB1F4C500400B08D27 /* InfoViewController.swift */,
+				F766807A1F40EF3300DB5BDB /* Animation.swift */,
+				F766803A1F40EE9000DB5BDB /* AppDelegate.swift */,
+				F766803C1F40EE9000DB5BDB /* ViewController.swift */,
+				F76680441F40EE9000DB5BDB /* Assets.xcassets */,
+				F76680461F40EE9000DB5BDB /* LaunchScreen.storyboard */,
+				F76680491F40EE9000DB5BDB /* Info.plist */,
+				F76680411F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld */,
+			);
+			path = SnackTastic2.0;
+			sourceTree = "<group>";
+		};
+		F76680511F40EE9000DB5BDB /* SnackTastic2.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F76680521F40EE9000DB5BDB /* SnackTastic2_0Tests.swift */,
+				F76680541F40EE9000DB5BDB /* Info.plist */,
+			);
+			path = SnackTastic2.0Tests;
+			sourceTree = "<group>";
+		};
+		F766805C1F40EE9000DB5BDB /* SnackTastic2.0UITests */ = {
+			isa = PBXGroup;
+			children = (
+				F766805D1F40EE9000DB5BDB /* SnackTastic2_0UITests.swift */,
+				F766805F1F40EE9000DB5BDB /* Info.plist */,
+			);
+			path = SnackTastic2.0UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F76680361F40EE9000DB5BDB /* SnackTastic2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76680621F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0" */;
+			buildPhases = (
+				F76680331F40EE9000DB5BDB /* Sources */,
+				F76680341F40EE9000DB5BDB /* Frameworks */,
+				F76680351F40EE9000DB5BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnackTastic2.0;
+			productName = SnackTastic2.0;
+			productReference = F76680371F40EE9000DB5BDB /* SnackTastic2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F766804D1F40EE9000DB5BDB /* SnackTastic2.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76680651F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0Tests" */;
+			buildPhases = (
+				F766804A1F40EE9000DB5BDB /* Sources */,
+				F766804B1F40EE9000DB5BDB /* Frameworks */,
+				F766804C1F40EE9000DB5BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F76680501F40EE9000DB5BDB /* PBXTargetDependency */,
+			);
+			name = SnackTastic2.0Tests;
+			productName = SnackTastic2.0Tests;
+			productReference = F766804E1F40EE9000DB5BDB /* SnackTastic2.0Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F76680581F40EE9000DB5BDB /* SnackTastic2.0UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76680681F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0UITests" */;
+			buildPhases = (
+				F76680551F40EE9000DB5BDB /* Sources */,
+				F76680561F40EE9000DB5BDB /* Frameworks */,
+				F76680571F40EE9000DB5BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F766805B1F40EE9000DB5BDB /* PBXTargetDependency */,
+			);
+			name = SnackTastic2.0UITests;
+			productName = SnackTastic2.0UITests;
+			productReference = F76680591F40EE9000DB5BDB /* SnackTastic2.0UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F766802F1F40EE9000DB5BDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Johannes Velde";
+				TargetAttributes = {
+					F76680361F40EE9000DB5BDB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = V8G4U4EP2K;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					F766804D1F40EE9000DB5BDB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = V8G4U4EP2K;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F76680361F40EE9000DB5BDB;
+					};
+					F76680581F40EE9000DB5BDB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = V8G4U4EP2K;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F76680361F40EE9000DB5BDB;
+					};
+				};
+			};
+			buildConfigurationList = F76680321F40EE9000DB5BDB /* Build configuration list for PBXProject "SnackTastic2.0" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F766802E1F40EE9000DB5BDB;
+			productRefGroup = F76680381F40EE9000DB5BDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F76680361F40EE9000DB5BDB /* SnackTastic2.0 */,
+				F766804D1F40EE9000DB5BDB /* SnackTastic2.0Tests */,
+				F76680581F40EE9000DB5BDB /* SnackTastic2.0UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F76680351F40EE9000DB5BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E5D4A91F4EE55B00E2865D /* MaxVolume.png in Resources */,
+				F7E5D4AD1F4EE55B00E2865D /* Shopping Cart Empty.png in Resources */,
+				F7E5D4AE1F4EE55B00E2865D /* Shopping Cart.png in Resources */,
+				F7E5D4AF1F4EE55B00E2865D /* Snax.mp3 in Resources */,
+				F7E5D4A81F4EE55B00E2865D /* Back.png in Resources */,
+				F7E5D4B01F4EE55B00E2865D /* Wrong.png in Resources */,
+				F7E5D4AC1F4EE55B00E2865D /* Right.png in Resources */,
+				F76680921F40EFA400DB5BDB /* Main.storyboard in Resources */,
+				F76680481F40EE9000DB5BDB /* LaunchScreen.storyboard in Resources */,
+				F7E5D4AA1F4EE55B00E2865D /* NoMusic.png in Resources */,
+				F7E5D4AB1F4EE55B00E2865D /* Picture.png in Resources */,
+				F76680451F40EE9000DB5BDB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F766804C1F40EE9000DB5BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76680571F40EE9000DB5BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F76680331F40EE9000DB5BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F766807D1F40EF3300DB5BDB /* MathematicShit.swift in Sources */,
+				F766803D1F40EE9000DB5BDB /* ViewController.swift in Sources */,
+				F766808B1F40EF8600DB5BDB /* Einkaufsliste.swift in Sources */,
+				F766807F1F40EF3300DB5BDB /* Snacklist.swift in Sources */,
+				F7E3CBCC1F4C500400B08D27 /* InfoViewController.swift in Sources */,
+				F766807E1F40EF3300DB5BDB /* ShowAllViewController.swift in Sources */,
+				F76680431F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld in Sources */,
+				F76680801F40EF3300DB5BDB /* Animation.swift in Sources */,
+				F766803B1F40EE9000DB5BDB /* AppDelegate.swift in Sources */,
+				F78A87991F4C3E690078540C /* GetInternetShit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F766804A1F40EE9000DB5BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76680531F40EE9000DB5BDB /* SnackTastic2_0Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76680551F40EE9000DB5BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F766805E1F40EE9000DB5BDB /* SnackTastic2_0UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F76680501F40EE9000DB5BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F76680361F40EE9000DB5BDB /* SnackTastic2.0 */;
+			targetProxy = F766804F1F40EE9000DB5BDB /* PBXContainerItemProxy */;
+		};
+		F766805B1F40EE9000DB5BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F76680361F40EE9000DB5BDB /* SnackTastic2.0 */;
+			targetProxy = F766805A1F40EE9000DB5BDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F76680461F40EE9000DB5BDB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76680471F40EE9000DB5BDB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F76680601F40EE9000DB5BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F76680611F40EE9000DB5BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F76680631F40EE9000DB5BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		F76680641F40EE9000DB5BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		F76680661F40EE9000DB5BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackTastic2.0.app/SnackTastic2.0";
+			};
+			name = Debug;
+		};
+		F76680671F40EE9000DB5BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnackTastic2.0.app/SnackTastic2.0";
+			};
+			name = Release;
+		};
+		F76680691F40EE9000DB5BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = SnackTastic2.0;
+			};
+			name = Debug;
+		};
+		F766806A1F40EE9000DB5BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = V8G4U4EP2K;
+				INFOPLIST_FILE = SnackTastic2.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = SnackTastic2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F76680321F40EE9000DB5BDB /* Build configuration list for PBXProject "SnackTastic2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76680601F40EE9000DB5BDB /* Debug */,
+				F76680611F40EE9000DB5BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76680621F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76680631F40EE9000DB5BDB /* Debug */,
+				F76680641F40EE9000DB5BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76680651F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76680661F40EE9000DB5BDB /* Debug */,
+				F76680671F40EE9000DB5BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76680681F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76680691F40EE9000DB5BDB /* Debug */,
+				F766806A1F40EE9000DB5BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F76680411F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F76680421F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodel */,
+			);
+			currentVersion = F76680421F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodel */;
+			path = SnackTastic2_0.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F766802F1F40EE9000DB5BDB /* Project object */;
+}
