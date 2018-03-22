@@ -465,6 +465,7 @@ class ViewController: UIViewController {
         if(chips.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && fruchtgummi.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && schokolade.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && gebaeck.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && trinken.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && sonstiges.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1)){
             resultLabel.text = "Es muss mindestens ein Feld ausgewählt sein!"
             //picture.png wird angezeigt
+            math.loadFromDatabase()
             imageView.image = #imageLiteral(resourceName: "Picture.png")
             
         }else{
@@ -510,6 +511,8 @@ class ViewController: UIViewController {
             })
             task.resume()
             resultLabel.text = "Your Snack for today is \n \(result.key) 🎉"
+            math.saveToDatabase(url : result.value, name : result.key)
+            math.loadFromDatabase()
             //Übergabe an Public Var
             publicSnackVar = resultLabel.text!
         }

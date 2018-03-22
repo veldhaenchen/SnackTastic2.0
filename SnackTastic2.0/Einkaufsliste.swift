@@ -9,7 +9,5 @@
 import Foundation
 
 class Einkaufsliste{
-    
-    let hi = 7
-    
+        
 }

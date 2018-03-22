@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Infos" representedClassName="Infos" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Snacks" representedClassName="Snacks" syncable="YES" codeGenerationType="class">
+        <attribute name="ballaststoffe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brennwertInKcal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brennwertInKJ" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="davonZucker" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eiweis" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fett" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="kohlenhydrate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="salz" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Infos" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Snacks" positionX="-5535" positionY="-7353" width="128" height="240"/>
     </elements>
 </model>

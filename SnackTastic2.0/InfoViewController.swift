@@ -8,12 +8,13 @@
 //  Datum       Name    Action
 //  24.08.17    Jo      Class added and Values placed -> Working
 //  27.08.17    Jo      BUG: CellViews müssen wieder aufgelöst werden und zu stack views zusammen geführt werden
+//  22.03.2018  Jo      Anfang von CoreData
 
 import Foundation
 import UIKit
 
 class InfoViewController: UIViewController{
-    
+        
     var math = MathematicShit()
     var getInternetShit = GetInternetShit()
     var views = ViewController()
