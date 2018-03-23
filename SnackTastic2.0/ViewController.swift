@@ -14,18 +14,20 @@
 //  01.08.17    Jo      Animation works but should be more easier to solve! (2d array and 2 loops)
 //  12.08.17    Jo      Added a Function in vewdidLoad to avoid url Errors
 //  24.08.17    Jo      Documentation written
-
+//  23.03.18    Jo      Added First Initializng, which can be seen by clicking start
+//  23.03.18    Jo      Removed shoppingCartButton and added RefreshButton with function
 import UIKit
 import AVFoundation //Für Musik
 
 
-
-public var publicSnackVar = "ERROR"
+//Öffentliche SnackVariable, die den gerade gezogenen Snack beinhaltet
+public var currentSnack = "ERROR"
 
 class ViewController: UIViewController {
     //Inititalisiere Variablen
     var snacklist = SnackList()
     var math = MathematicShit()
+    var getInternetShit = GetInternetShit()
     
     //Ausgabe, Buttons und so weiter
     @IBOutlet weak var imageView: UIImageView!
@@ -38,8 +40,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var sonstiges: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     weak var shapeLayer: CAShapeLayer?
-    @IBOutlet weak var dontAddToCartButton: UIButton!
-    @IBOutlet weak var addToCartButton: UIButton!
     
     
     //---------------Music Definition-START----------//
@@ -50,21 +50,84 @@ class ViewController: UIViewController {
         if(audioPlayer.isPlaying){
             sender.setBackgroundImage( #imageLiteral(resourceName: "NoMusic.png"), for: UIControlState.normal)
             audioPlayer.stop()
-            
         }else{
-            
             sender.setBackgroundImage( #imageLiteral(resourceName: "MaxVolume.png"), for: UIControlState.normal)
             audioPlayer.play()
-            
         }
     }
     //---------------Music Definition-ENDE----------//
     
+    //---------------Refresh DataBase-START---------//
+    @IBAction func refreshButton(_ sender: UIButton) {
+        //First Intitializing
+        for (key, value) in math.showAllSnacks() {
+            //Animation Rotation
+            let imgViewRing = UIImageView(image: UIImage(named: "refresh"))
+            imgViewRing.frame = CGRect(x: 0, y: 0, width: UIImage(named: "refresh")!.size.width, height: UIImage(named: "refresh")!.size.height)
+            imgViewRing.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
+            rotateAnimation(imageView: imgViewRing)
+            self.view.addSubview(imgViewRing)
+            
+            print("name:" + key + "\n" + "url: " + value)
+            
+            var imageURL = getInternetShit.getImageUrl(imageURL : value)
+            print("ImageURL: " + imageURL)
+            var htmlString = getInternetShit.convertURLToHTML(value: value)
+            var info = getInternetShit.getInfoOfUrl(completeHTMLString : htmlString)
+            /*
+             print(
+             "Brennwert in kJ: \t\t\t\t\t\(info[0])\n" +
+             "Brennwert in kcal: \t\t\t\t\t\(info[1])\n" +
+             "Fett in g: \t\t\t\t\t\t\t\(info[2])\n" +
+             "Davon gesättigte Fettsäuren in g: \t\(info[3])\n" +
+             "Kohlenhydrate in g: \t\t\t\t\(info[4])\n" +
+             "davon Zucker in g: \t\t\t\t\t\(info[5])\n" +
+             //"Ballaststoffe in g: \(info[6])\n"
+             "Eiweiß in g: \t\t\t\t\t\t\(info[6])\n\n"
+             //"Salz in g: \(info[7])\n"
+             )
+             */
+            math.saveToDatabase(
+                url: value,
+                name: key,
+                shop: "NULL",
+                genre : "NULL",
+                price:"NULL",
+                kohlenhydrate: info[4],
+                fett: info[2],
+                davonZucker:info[5],
+                brennwertInKJ:info[0],
+                brennwertInKcal: info[1],
+                eiweis: info[6],
+                ballaststoffe: "NULL",
+                salz: "String"
+            )
+        }
+    }
     
-    //---------------Animation Definition-----------//
+    func rotateAnimation(imageView:UIImageView,duration: CFTimeInterval = 2.0) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(.pi * 2.0)
+        rotateAnimation.duration = duration
+        rotateAnimation.repeatCount = Float.greatestFiniteMagnitude;
+        
+        imageView.layer.add(rotateAnimation, forKey: nil)
+    }
+    //---------------Refresh DataBase-ENDE---------//
+    
+    //
+    @IBAction func loadData(_ sender: UIButton) {
+        math.loadFromDatabase()
+    }
+    
+    //
     
     
-    //-------------- chipsColor --------------------//
+    //---------------Animation Definition-STRAT----//
+    
+    
+    //-------------- chipsColor -------------------//
     
     @IBAction func chipsColor(_ sender: UIButton) {
         if(sender.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
@@ -421,19 +484,7 @@ class ViewController: UIViewController {
             animation.duration = 2
             shapeLayer.add(animation, forKey: "MyAnimation")
             
-            //Code for Circle
-             let circle = UIView(frame: CGRect(x: 280.0, y: 520.0, width: 100.0, height: 100.0))
-             
-             circle.center = self.view.center
-             circle.layer.cornerRadius = 50
-             circle.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)
-             circle.clipsToBounds = true
-             
-             
-             self.view.addSubview(circle)
-             //Code for Circle END
-             //save shape layer
-            
+            //save shape layer
             self.shapeLayer = shapeLayer
             
         }
@@ -465,62 +516,52 @@ class ViewController: UIViewController {
         if(chips.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && fruchtgummi.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && schokolade.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && gebaeck.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && trinken.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && sonstiges.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1)){
             resultLabel.text = "Es muss mindestens ein Feld ausgewählt sein!"
             //picture.png wird angezeigt
-            math.loadFromDatabase()
             imageView.image = #imageLiteral(resourceName: "Picture.png")
             
         }else{
             //Bekommen des Resultstrings
-            let result  = math.doMathematicalShit(combine: combine, sum: combine.count)
+            let result  = math.getRandomSnack(combinedSnackList: combine, sum: combine.count)
             let url : URL = URL(string: result.value)!
             let session = URLSession.shared
             //Bekomme Bild rein
             let task = session.dataTask(with: url, completionHandler: {
-                (
-                data, response, error) in
+                (data, response, error) in
                 
-                if data != nil
-                {
+                if data != nil{
                     let image = UIImage(data: data!)
                     //Wenn ImageUrl Image enthält, dann zeige an
-                    if(image != nil)
-                    {
+                    if(image != nil){
                         DispatchQueue.main.async(execute: {
                             self.imageView.image = image
                             self.imageView.alpha = 0
-                            self.addToCartButton.isHidden = false
-                            self.dontAddToCartButton.isHidden = false
                             //Unnötige Animation
                             //UIView.animate(withDuration: 2.5, animations: {
                             self.imageView.alpha = 1.0
                             //})
                         })
-                        //Ansonsten zeige DefaultImage an
+                        
                     }else{
-                        DispatchQueue.main.async(execute: {
-                            self.imageView.image = image
-                            self.imageView.alpha = 0
-                            self.addToCartButton.isHidden = true
-                            self.dontAddToCartButton.isHidden = true
-                            //Unnötige Animation
-                            //UIView.animate(withDuration: 2.5, animations: {
-                            self.imageView.alpha = 1.0
-                            //})
-                        })
+                        //Ansonsten zeige DefaultImage an
+                        
+                        self.imageView.image = #imageLiteral(resourceName: "Picture.png")
+                        self.imageView.alpha = 0
+                        //Unnötige Animation
+                        //UIView.animate(withDuration: 1.0, animations: {
+                        self.imageView.alpha = 1.0
+                        //})
+                        
                     }
                 }
             })
             task.resume()
             resultLabel.text = "Your Snack for today is \n \(result.key) 🎉"
-            math.saveToDatabase(url : result.value, name : result.key)
-            math.loadFromDatabase()
+            
             //Übergabe an Public Var
-            publicSnackVar = resultLabel.text!
+            currentSnack = result.key
         }
     }
     
     override func viewDidLoad() {
-        addToCartButton.isHidden = true
-        dontAddToCartButton.isHidden = true
         chips.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)
         schokolade.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)
         trinken.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)
@@ -667,7 +708,6 @@ class ViewController: UIViewController {
         
         //---------------Animation Definition-END-------//
         super.viewDidLoad()
-        
     }
     
     //Bekomme alle variablen aus der Eigentlichen View

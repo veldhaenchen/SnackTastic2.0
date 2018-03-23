@@ -107,7 +107,7 @@
                                         <rect key="frame" x="-16" y="0.0" width="0.0" height="478"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk0-eB-CPD">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -200,7 +200,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1473.75" y="-314.78873239436621"/>
+            <point key="canvasLocation" x="1474" y="161"/>
         </scene>
         <!--Snack View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -225,13 +225,11 @@
                                             <action selector="playMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mjc-UA-vaq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxi-9m-xw8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MI-Fd-bCP">
                                         <rect key="frame" x="259" y="0.0" width="29" height="30"/>
-                                        <state key="normal" backgroundImage="Shopping Cart Empty.png"/>
+                                        <state key="normal" title="Button" backgroundImage="refresh.png"/>
                                         <connections>
-                                            <segue destination="hyk-mF-Pm0" kind="popoverPresentation" popoverAnchorView="Xxi-9m-xw8" id="boh-i2-kYK">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7V-uN-0ef"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -239,15 +237,10 @@
                                     <constraint firstAttribute="height" constant="30" id="Yfr-mh-699"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M4Q-mZ-EMT">
-                                <rect key="frame" x="67" y="88" width="187" height="257"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="light.png" translatesAutoresizingMaskIntoConstraints="NO" id="rmN-Te-A3N">
+                                <rect key="frame" x="40" y="53" width="240" height="359"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Gt-Ovn">
-                                <rect key="frame" x="67" y="88" width="187" height="257"/>
-                                <connections>
-                                    <segue destination="0WY-AS-pAy" kind="show" id="hI5-P6-eL0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Snacklist For Today is..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDO-8G-RUZ">
                                 <rect key="frame" x="21" y="367" width="283" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
@@ -392,60 +385,56 @@
                                     <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsY-WN-fNc"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="OpC-Df-Bdk" userLabel="RightWrong Stack View">
-                                <rect key="frame" x="66" y="315" width="188" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-eG-NuS">
-                                        <rect key="frame" x="0.0" y="0.0" width="29" height="30"/>
-                                        <state key="normal" backgroundImage="Wrong.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXJ-zj-ohs">
-                                        <rect key="frame" x="159" y="0.0" width="29" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" backgroundImage="Right.png"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="OKa-ir-QtK"/>
-                                </constraints>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lamp.png" translatesAutoresizingMaskIntoConstraints="NO" id="W7b-fY-xi3">
+                                <rect key="frame" x="70" y="0.0" width="185" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M4Q-mZ-EMT">
+                                <rect key="frame" x="86" y="131" width="148" height="204"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Gt-Ovn">
+                                <rect key="frame" x="89" y="137" width="144" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="0WY-AS-pAy" kind="show" id="hI5-P6-eL0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-q7-mij">
+                                <rect key="frame" x="16" y="103" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="load"/>
+                                <connections>
+                                    <action selector="loadData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Fh-62-lbI"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.41176470588235292" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QEa-Gt-Ovn" secondAttribute="trailing" constant="50" id="6qM-ME-b60"/>
                             <constraint firstItem="EDO-8G-RUZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="DNi-pT-I6C"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I2T-Pu-Ipl" secondAttribute="bottom" constant="20" id="GIm-Ka-WNy"/>
-                            <constraint firstItem="QEa-Gt-Ovn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="LmF-cd-C48"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EDO-8G-RUZ" secondAttribute="bottom" constant="181" id="PfK-CZ-BWE"/>
-                            <constraint firstItem="QEa-Gt-Ovn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Rlh-tF-TAo"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QEa-Gt-Ovn" secondAttribute="bottom" constant="223" id="Ta6-KY-d6E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EDO-8G-RUZ" secondAttribute="trailing" id="TzG-Dz-6T5"/>
                             <constraint firstItem="I6Y-Bp-dS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Va9-uK-cdy"/>
-                            <constraint firstItem="M4Q-mZ-EMT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="Vgk-ya-5wL"/>
-                            <constraint firstItem="OpC-Df-Bdk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Y2f-VI-xL3"/>
+                            <constraint firstItem="M4Q-mZ-EMT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="111" id="Vgk-ya-5wL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="v4S-v2-Ua1" secondAttribute="leading" id="bwZ-hj-b8q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I6Y-Bp-dS2" secondAttribute="trailing" id="dkr-Ce-l3r"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OpC-Df-Bdk" secondAttribute="bottom" constant="223" id="ehP-Gm-nAE"/>
-                            <constraint firstItem="M4Q-mZ-EMT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="g4Q-ST-aEJ"/>
+                            <constraint firstItem="M4Q-mZ-EMT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="g4Q-ST-aEJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="I2T-Pu-Ipl" secondAttribute="leading" id="gQO-tk-ogh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v4S-v2-Ua1" secondAttribute="bottom" constant="60" id="jMg-5R-t7G"/>
                             <constraint firstItem="I6Y-Bp-dS2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kr7-ev-TL2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="M4Q-mZ-EMT" secondAttribute="trailing" constant="50" id="pGv-Ta-2v0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OpC-Df-Bdk" secondAttribute="trailing" constant="50" id="qbg-JP-zLw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M4Q-mZ-EMT" secondAttribute="trailing" constant="70" id="pGv-Ta-2v0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I2T-Pu-Ipl" secondAttribute="trailing" id="qsv-2m-5LC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v4S-v2-Ua1" secondAttribute="trailing" id="r5r-et-XSS"/>
                             <constraint firstItem="I6Y-Bp-dS2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="thJ-Gd-h68"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M4Q-mZ-EMT" secondAttribute="bottom" constant="223" id="v28-j2-3Kb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M4Q-mZ-EMT" secondAttribute="bottom" constant="233" id="v28-j2-3Kb"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Zxx-8d-T6g" appends="YES" id="RGZ-xj-4lg"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="addToCartButton" destination="GXJ-zj-ohs" id="uvc-XC-AKx"/>
                         <outlet property="chips" destination="zIg-r4-e04" id="izt-cg-LjR"/>
-                        <outlet property="dontAddToCartButton" destination="gXv-eG-NuS" id="dsa-oE-0vy"/>
                         <outlet property="fruchtgummi" destination="0Fk-GH-eOs" id="6nn-aP-Al8"/>
                         <outlet property="gebaeck" destination="jQa-sl-BP6" id="4y4-j0-Cwo"/>
                         <outlet property="imageView" destination="M4Q-mZ-EMT" id="MRu-uK-K6t"/>
@@ -591,17 +580,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVf-a2-agA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926.25" y="501.76056338028172"/>
+            <point key="canvasLocation" x="1474" y="946"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back.png" width="64" height="64"/>
+        <image name="Lamp.png" width="240" height="264"/>
         <image name="NoMusic.png" width="64" height="64"/>
-        <image name="Right.png" width="64" height="64"/>
-        <image name="Shopping Cart Empty.png" width="64" height="64"/>
-        <image name="Wrong.png" width="64" height="64"/>
+        <image name="light.png" width="293" height="364"/>
+        <image name="refresh.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IsK-or-6qX"/>
+        <segue reference="kkd-Gs-rPy"/>
     </inferredMetricsTieBreakers>
 </document>

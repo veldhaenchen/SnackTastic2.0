@@ -13,36 +13,37 @@
 import Foundation
 import UIKit
 import CoreData
+import Firebase
+
 
 class MathematicShit{
+    
     //variablen, die auf die anderen Klassen referenzieren
     var showAll = SnackList()
     var showAllImages = SnackList()
     var getInternetShit = GetInternetShit()
     
     //funktion um Zufallszahl zu berechnen.
-    func doMathematicalShit(combine: [String : String], sum : Int) -> (key : String, value : String) {
+    func getRandomSnack(combinedSnackList: [String : String], sum : Int) -> (key : String, value : String) {
         //Check, ob liste leer ist
-        if (combine.isEmpty) {
+        if (combinedSnackList.isEmpty) {
             //Wenn ja dann,
             return ("Ups, da ist etwas schief gelaufen...😕", "")
         }else{
             //Ansonsten Zufallszahl generieren
-            let index: Int = Int(arc4random_uniform(UInt32(combine.count)))
+            let randomNum: Int = Int(arc4random_uniform(UInt32(combinedSnackList.count)))
             //setzen des ZufallsSnacks
-            let key : String = Array(combine.keys)[index]
-            let value : String = combine[key]!
+            let key : String = Array(combinedSnackList.keys)[randomNum]
+            let value : String = combinedSnackList[key]!
             //ließ imageUrl aus HTML-Seite heraus -> später kann hier noch die weiteren Infos nachgetragen werden
-            publicSnackVar = key
-            print(publicSnackVar)
-            let imageUrl = getInternetShit.getImageUrl(imageURL : value)
-            print("ImageUrl:\t \(imageUrl) \n Snack: \t \(key)")
-            return (key, imageUrl)
+            currentSnack = key
+            let imageURL = getInternetShit.getImageUrl(imageURL : value)
+            return (key, imageURL)
         }
     }
     
     //Setzt alle Listen zusammen
-    func showAllItems()-> [String : String]{
+    func showAllSnacks()-> [String : String]{
         var combine : [String : String] = [:]
         showAll.chipsList.forEach { (k,v) in combine[k] = v }
         showAll.schokoladeList.forEach { (k,v) in combine[k] = v }
@@ -65,6 +66,7 @@ class MathematicShit{
     
     // Loading DataBase into the entity - lists
     func loadFromDatabase() -> Void {
+        print("LOAD PERSISTENT DATA")
         // Get context
         let context = getContext()
         
@@ -84,30 +86,47 @@ class MathematicShit{
                 for result in results as! [NSManagedObject] {
                     count += 1// COUNT++
                     
-                    // If url is a String:
                     if let url = result.value(forKey: "url") as? String {
-                        print("PERSISTENT MOTHERFUCKER!!!")
-                        print(url)
+                        print("url: " + url)
                     }
                     if let name = result.value(forKey: "name") as? String {
+                        print("name: " + name)
                     }
                     if let kohlenhydrate = result.value(forKey: "kohlenhydrate") as? String {
+                        print("kohlenhydrate: " + kohlenhydrate)
+                        
                     }
                     if let image = result.value(forKey: "image") as? String {
+                        print("image: " + image)
+                        
                     }
                     if let fett = result.value(forKey: "fett") as? String {
+                        print("fett: " + fett)
+                        
                     }
                     if let davonZucker = result.value(forKey: "davonZucker") as? String {
+                        print("davonZucker: " + davonZucker)
+                        
                     }
                     if let brennwertInKJ = result.value(forKey: "brennwertInKJ") as? String {
+                        print("brennwertInKJ: " + brennwertInKJ)
+                        
                     }
                     if let brennwertInKcal = result.value(forKey: "brennwertInKcal") as? String {
+                        print("brennwertInKcal: " + brennwertInKcal)
+                        
                     }
                     if let ballaststoffe = result.value(forKey: "ballaststoffe") as? String {
+                        print("ballaststoffe: " + ballaststoffe)
+                        
                     }
                     if let eiweis = result.value(forKey: "eiweis") as? String {
+                        print("eiweis: " + eiweis)
+                        
                     }
                     if let salz = result.value(forKey: "salz") as? String {
+                        print("salz: " + salz)
+                        
                     }
                 }
             }
@@ -117,7 +136,10 @@ class MathematicShit{
         }
     }
     
-    func saveToDatabase(url : String, name : String) -> Void {
+    
+    //Saves Data to Firebase
+    func saveToDatabase(url: String, name: String, shop: String, genre: String, price: String, kohlenhydrate: String, fett: String, davonZucker: String, brennwertInKJ: String, brennwertInKcal: String, eiweis: String,
+                        ballaststoffe : String, salz : String) -> Void {
         //let list = showAllItems()
         let context = getContext()
         
@@ -127,16 +149,31 @@ class MathematicShit{
         // The way to set new values in entities in the DataBase
         newSnack.setValue(url, forKey: "url")
         newSnack.setValue(name, forKey: "name")
+        //newSnack.setValue(iD, forKey: "iD")
+        //newSnack.setValue(image, forKey: "image")
+        newSnack.setValue(genre, forKey: "genre")
+        newSnack.setValue(shop, forKey: "shop")
+        newSnack.setValue(price, forKey: "price")
+        newSnack.setValue(kohlenhydrate, forKey: "kohlenhydrate")
+        newSnack.setValue(fett, forKey: "fett")
+        newSnack.setValue(davonZucker, forKey: "davonZucker")
+        newSnack.setValue(brennwertInKJ, forKey: "brennwertInKJ")
+        newSnack.setValue(brennwertInKcal, forKey: "brennwertInKcal")
+        newSnack.setValue(eiweis, forKey: "eiweis")
+        newSnack.setValue(ballaststoffe, forKey: "ballaststoffe")
+        newSnack.setValue(salz, forKey: "salz")
+        
         // Trying to save the user
         do {
             try context.save()
-            print(">> [SAVED] new Snack: " + url + " | " + name + "...")
+            print(">> [SAVED] new Snack: " + url + " | " + name + " | " + " | "  + " |...")
             loadFromDatabase()
         }
         catch {
             // PROCESS ERROR
             print("SaveToDataBase failed...")
         }
+        
     }
     
 }

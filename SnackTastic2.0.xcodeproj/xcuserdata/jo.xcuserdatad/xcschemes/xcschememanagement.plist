@@ -7,7 +7,25 @@
 		<key>SnackTastic2.0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F76680361F40EE9000DB5BDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F766804D1F40EE9000DB5BDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F76680581F40EE9000DB5BDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

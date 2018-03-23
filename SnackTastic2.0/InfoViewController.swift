@@ -33,23 +33,11 @@ class InfoViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var result : String = publicSnackVar
         print("Anfang Nährwerte")
         // Do any additional setup after loading the view.
-        //setzt Informationen aus der HTML-Seite
-        print(result)
-        //Schneidet result wieder auseinander und holt sich durch den KEY die URL ab
-        let startIndex = "Your Snack for today is \n "
-        let endIndex = " 🎉"
-        let myStringArr = result.components(separatedBy : startIndex)
-        let first = myStringArr [1]
-        let second = first.components(separatedBy : endIndex)
-        result = second[0]
-        print(result)
-        let list : [String : String ] = math.showAllItems()
-        
+            print(currentSnack)
         //loopt durch die komplette liste und findet den KEY
-        if let entry = list.first(where: { (key, _) in key.contains(result) }) {
+        if let entry = math.showAllSnacks().first(where: { (key, _) in key.contains(currentSnack) }) {
             print("EntryList \(entry.value)")
             //Hole erst HTML-String
             let completeHTMLString : String = getInternetShit.convertURLToHTML(value: entry.value)

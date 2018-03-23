@@ -20,14 +20,14 @@ class GetInternetShit{
     var endIndexOfInfo1 : String = ""
     var endIndexOfInfo2 : String = ""
     
-    //Checkt, aus welchem Markt der Snack kommt
+    //Checkt, aus welchem Markt der Snack kommt und setzt Indexe
     func checkShop(url : String){
         if url.contains("real.de"){
-            print("Real")
+            print("Shop: Real")
             //Start- und Endindex werden aus der Html erzeugt
         }
         else if url.contains("edeka.de"){
-            print("Edeka")
+            print("Shop: Edeka")
             //Start- und Endindex werden aus der Html erzeugt
             startIndexOfImage = "<img style=\"display:none;\" src=\"//static.edeka.de/media/products/"
             endIndexOfImage = "\" id=\"productDetailImage"
@@ -47,7 +47,7 @@ class GetInternetShit{
             endIndexOfInfo2 = "\n</td><td class='col3'>"
         }
         else if url.contains("lidl.de"){
-            print("Lidl")
+            print("Shop: Lidl")
             //Start- und Endindex werden aus der Html erzeugt
             startIndexOfImage = "data-image-index=\"0\">"
             endIndexOfImage = "\">"
@@ -59,6 +59,7 @@ class GetInternetShit{
     
     //Returned das IMAGE-URL
     func getImageUrl(imageURL : String ) -> String{
+        //Setzt StartIndexe
         checkShop(url : imageURL)
         //Hole kompletten HTML-Code als String
         let completeHTMLString = convertURLToHTML(value: imageURL)
@@ -67,16 +68,7 @@ class GetInternetShit{
         let first: String = myStringArr [1]
         //Schneidet zweite hälfte ab
         let second = first.components(separatedBy : endIndexOfImage)
-        var variableUrl : String = second [0]
-        //Kunstrgriff, wird noch in startIndex eingebracht
-        if imageURL.contains("lidl.de"){
-            let startIndex = "<a href=\""
-            let endIndex = "\">"
-            let myStringArr2 = myStringArr[1].components(separatedBy : startIndex)
-            let second = myStringArr2 [1]
-            let b = second.components(separatedBy : endIndex)
-            variableUrl = b [0]
-        }
+        let variableUrl : String = second [0]
         //Zusammensetzen
         let endUrl : String = staticUrlOfImage + variableUrl
         return endUrl
@@ -100,16 +92,13 @@ class GetInternetShit{
     
     //Returned alle Nährwertangaben
     func getInfoOfUrl(completeHTMLString : String) -> [String]{
-        checkShop(url : completeHTMLString)
         var infos : [String] = []
         var first = ""
         var second = [""]
         var myStringArr = [""]
         var i = 0
         for start in startIndexOfInfo{
-            print("-------getInfoOfUrl-START------\(start)")
             var ende = ""
-            print(ende)
             if(i == 0){
                 ende = endIndexOfInfo1
                 i = i + 1
@@ -130,6 +119,6 @@ class GetInternetShit{
         infos.remove(at: 0)
         return infos
     }
-
+    
     
 }

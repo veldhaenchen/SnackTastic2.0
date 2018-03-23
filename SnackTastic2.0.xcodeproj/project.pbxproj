@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9621EEC3E5A3C508406BB66 /* Pods_SnackTastic2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E0C5935524256E8F062BF2 /* Pods_SnackTastic2_0.framework */; };
+		C83377A820646B6600980FB4 /* Lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = C83377A720646B6600980FB4 /* Lamp.png */; };
+		C83377AE206477B200980FB4 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = C83377AD206477B100980FB4 /* light.png */; };
+		C876E4FA206523C400B72D69 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C876E4F9206523C400B72D69 /* refresh.png */; };
+		C87D6EC160D545F880A57F6A /* Pods_SnackTastic2_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF336680E8DF554840B07F6 /* Pods_SnackTastic2_0Tests.framework */; };
+		C8D200E5206438B6000D2A06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8D200E4206438B6000D2A06 /* GoogleService-Info.plist */; };
+		E114215A6AA1A883C1E41D2E /* Pods_SnackTastic2_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91ED94769E2EFA77709CC5AB /* Pods_SnackTastic2_0UITests.framework */; };
 		F766803B1F40EE9000DB5BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766803A1F40EE9000DB5BDB /* AppDelegate.swift */; };
 		F766803D1F40EE9000DB5BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766803C1F40EE9000DB5BDB /* ViewController.swift */; };
 		F76680431F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F76680411F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld */; };
@@ -51,6 +58,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4A5A12B9854AEE9A627385 /* Pods-SnackTastic2.0Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0Tests/Pods-SnackTastic2.0Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		17E0C5935524256E8F062BF2 /* Pods_SnackTastic2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackTastic2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0EC45110B8D7CEA3B391F7 /* Pods-SnackTastic2.0Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0Tests/Pods-SnackTastic2.0Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4FF336680E8DF554840B07F6 /* Pods_SnackTastic2_0Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackTastic2_0Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7584476670748978D1C095BD /* Pods-SnackTastic2.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0UITests/Pods-SnackTastic2.0UITests.release.xcconfig"; sourceTree = "<group>"; };
+		91ED94769E2EFA77709CC5AB /* Pods_SnackTastic2_0UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnackTastic2_0UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB513BA3EC86AF8FB1E8E8B /* Pods-SnackTastic2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0/Pods-SnackTastic2.0.release.xcconfig"; sourceTree = "<group>"; };
+		C83377A720646B6600980FB4 /* Lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lamp.png; sourceTree = "<group>"; };
+		C83377AD206477B100980FB4 /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
+		C876E4F9206523C400B72D69 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		C8D200E4206438B6000D2A06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8D200E720644CDE000D2A06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E08A47E4B83B766EF494A165 /* Pods-SnackTastic2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0/Pods-SnackTastic2.0.debug.xcconfig"; sourceTree = "<group>"; };
+		E6FC43ED73C3AF37DDA9A071 /* Pods-SnackTastic2.0UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnackTastic2.0UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnackTastic2.0UITests/Pods-SnackTastic2.0UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F76680371F40EE9000DB5BDB /* SnackTastic2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackTastic2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F766803A1F40EE9000DB5BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F766803C1F40EE9000DB5BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9621EEC3E5A3C508406BB66 /* Pods_SnackTastic2_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87D6EC160D545F880A57F6A /* Pods_SnackTastic2_0Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +125,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E114215A6AA1A883C1E41D2E /* Pods_SnackTastic2_0UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BB52B8E247129BE2BD18DC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17E0C5935524256E8F062BF2 /* Pods_SnackTastic2_0.framework */,
+				4FF336680E8DF554840B07F6 /* Pods_SnackTastic2_0Tests.framework */,
+				91ED94769E2EFA77709CC5AB /* Pods_SnackTastic2_0UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B55FEA761CEE41F522BEE4AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E08A47E4B83B766EF494A165 /* Pods-SnackTastic2.0.debug.xcconfig */,
+				9CB513BA3EC86AF8FB1E8E8B /* Pods-SnackTastic2.0.release.xcconfig */,
+				0F4A5A12B9854AEE9A627385 /* Pods-SnackTastic2.0Tests.debug.xcconfig */,
+				1B0EC45110B8D7CEA3B391F7 /* Pods-SnackTastic2.0Tests.release.xcconfig */,
+				E6FC43ED73C3AF37DDA9A071 /* Pods-SnackTastic2.0UITests.debug.xcconfig */,
+				7584476670748978D1C095BD /* Pods-SnackTastic2.0UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F719C0A31F45F8A30086C256 /* Bilder & Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +164,9 @@
 				F7E5D4A21F4EE55B00E2865D /* Picture.png */,
 				F7E5D4A31F4EE55B00E2865D /* Right.png */,
 				F7E5D4A41F4EE55B00E2865D /* Shopping Cart Empty.png */,
+				C83377A720646B6600980FB4 /* Lamp.png */,
+				C876E4F9206523C400B72D69 /* refresh.png */,
+				C83377AD206477B100980FB4 /* light.png */,
 				F7E5D4A51F4EE55B00E2865D /* Shopping Cart.png */,
 				F7E5D4A61F4EE55B00E2865D /* Snax.mp3 */,
 				F7E5D4A71F4EE55B00E2865D /* Wrong.png */,
@@ -128,11 +178,14 @@
 		F766802E1F40EE9000DB5BDB = {
 			isa = PBXGroup;
 			children = (
+				C8D200E4206438B6000D2A06 /* GoogleService-Info.plist */,
 				F719C0A31F45F8A30086C256 /* Bilder & Sound */,
 				F76680391F40EE9000DB5BDB /* SnackTastic2.0 */,
 				F76680511F40EE9000DB5BDB /* SnackTastic2.0Tests */,
 				F766805C1F40EE9000DB5BDB /* SnackTastic2.0UITests */,
 				F76680381F40EE9000DB5BDB /* Products */,
+				B55FEA761CEE41F522BEE4AA /* Pods */,
+				1BB52B8E247129BE2BD18DC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +215,7 @@
 				F76680441F40EE9000DB5BDB /* Assets.xcassets */,
 				F76680461F40EE9000DB5BDB /* LaunchScreen.storyboard */,
 				F76680491F40EE9000DB5BDB /* Info.plist */,
+				C8D200E720644CDE000D2A06 /* GoogleService-Info.plist */,
 				F76680411F40EE9000DB5BDB /* SnackTastic2_0.xcdatamodeld */,
 			);
 			path = SnackTastic2.0;
@@ -192,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76680621F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0" */;
 			buildPhases = (
+				E2376F6243254ECB19A9BBDD /* [CP] Check Pods Manifest.lock */,
 				F76680331F40EE9000DB5BDB /* Sources */,
 				F76680341F40EE9000DB5BDB /* Frameworks */,
 				F76680351F40EE9000DB5BDB /* Resources */,
+				A56FDCAB398D4396E85F78FD /* [CP] Embed Pods Frameworks */,
+				E5B210D5BA5CA6920A8700BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76680651F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0Tests" */;
 			buildPhases = (
+				A3A95BF96E88D4DF8F084729 /* [CP] Check Pods Manifest.lock */,
 				F766804A1F40EE9000DB5BDB /* Sources */,
 				F766804B1F40EE9000DB5BDB /* Frameworks */,
 				F766804C1F40EE9000DB5BDB /* Resources */,
+				50E0E4F81BFC0DAEB4627A8B /* [CP] Embed Pods Frameworks */,
+				D18D1DBC8E768FA68ECD5ED7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F76680681F40EE9000DB5BDB /* Build configuration list for PBXNativeTarget "SnackTastic2.0UITests" */;
 			buildPhases = (
+				C86090BEE3E91E55BF0785C4 /* [CP] Check Pods Manifest.lock */,
 				F76680551F40EE9000DB5BDB /* Sources */,
 				F76680561F40EE9000DB5BDB /* Frameworks */,
 				F76680571F40EE9000DB5BDB /* Resources */,
+				2F19B3542DED5BB6E80AB44D /* [CP] Embed Pods Frameworks */,
+				0AA817F2AAD03F8ADCD2667E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,10 +361,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D200E5206438B6000D2A06 /* GoogleService-Info.plist in Resources */,
 				F7E5D4A91F4EE55B00E2865D /* MaxVolume.png in Resources */,
 				F7E5D4AD1F4EE55B00E2865D /* Shopping Cart Empty.png in Resources */,
 				F7E5D4AE1F4EE55B00E2865D /* Shopping Cart.png in Resources */,
 				F7E5D4AF1F4EE55B00E2865D /* Snax.mp3 in Resources */,
+				C83377AE206477B200980FB4 /* light.png in Resources */,
 				F7E5D4A81F4EE55B00E2865D /* Back.png in Resources */,
 				F7E5D4B01F4EE55B00E2865D /* Wrong.png in Resources */,
 				F7E5D4AC1F4EE55B00E2865D /* Right.png in Resources */,
@@ -309,7 +374,9 @@
 				F76680481F40EE9000DB5BDB /* LaunchScreen.storyboard in Resources */,
 				F7E5D4AA1F4EE55B00E2865D /* NoMusic.png in Resources */,
 				F7E5D4AB1F4EE55B00E2865D /* Picture.png in Resources */,
+				C876E4FA206523C400B72D69 /* refresh.png in Resources */,
 				F76680451F40EE9000DB5BDB /* Assets.xcassets in Resources */,
+				C83377A820646B6600980FB4 /* Lamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +395,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AA817F2AAD03F8ADCD2667E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0UITests/Pods-SnackTastic2.0UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F19B3542DED5BB6E80AB44D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0UITests/Pods-SnackTastic2.0UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50E0E4F81BFC0DAEB4627A8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0Tests/Pods-SnackTastic2.0Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3A95BF96E88D4DF8F084729 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnackTastic2.0Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A56FDCAB398D4396E85F78FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0/Pods-SnackTastic2.0-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0/Pods-SnackTastic2.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C86090BEE3E91E55BF0785C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnackTastic2.0UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D18D1DBC8E768FA68ECD5ED7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0Tests/Pods-SnackTastic2.0Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2376F6243254ECB19A9BBDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnackTastic2.0-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5B210D5BA5CA6920A8700BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnackTastic2.0/Pods-SnackTastic2.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F76680331F40EE9000DB5BDB /* Sources */ = {
@@ -498,13 +717,13 @@
 		};
 		F76680631F40EE9000DB5BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E08A47E4B83B766EF494A165 /* Pods-SnackTastic2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V8G4U4EP2K;
 				INFOPLIST_FILE = SnackTastic2.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -515,13 +734,13 @@
 		};
 		F76680641F40EE9000DB5BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB513BA3EC86AF8FB1E8E8B /* Pods-SnackTastic2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V8G4U4EP2K;
 				INFOPLIST_FILE = SnackTastic2.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jo.SnackTastic2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -533,6 +752,7 @@
 		};
 		F76680661F40EE9000DB5BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F4A5A12B9854AEE9A627385 /* Pods-SnackTastic2.0Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -549,6 +769,7 @@
 		};
 		F76680671F40EE9000DB5BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B0EC45110B8D7CEA3B391F7 /* Pods-SnackTastic2.0Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -565,6 +786,7 @@
 		};
 		F76680691F40EE9000DB5BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6FC43ED73C3AF37DDA9A071 /* Pods-SnackTastic2.0UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = V8G4U4EP2K;
@@ -580,6 +802,7 @@
 		};
 		F766806A1F40EE9000DB5BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7584476670748978D1C095BD /* Pods-SnackTastic2.0UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = V8G4U4EP2K;
