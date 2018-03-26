@@ -35,7 +35,7 @@ class MathematicShit{
             //setzen des ZufallsSnacks
             let key : String = Array(combinedSnackList.keys)[randomNum]
             let value : String = combinedSnackList[key]!
-            //ließ imageUrl aus HTML-Seite heraus -> später kann hier noch die weiteren Infos nachgetragen werden
+            //ließ imageUrl aus HTML-Seite heraus
             currentSnack = key
             let imageURL = getInternetShit.getImageUrl(imageURL : value)
             return (key, imageURL)
@@ -64,9 +64,12 @@ class MathematicShit{
         return appDelegate.persistentContainer.viewContext
     }
     
+    
+    
+    
     // Loading DataBase into the entity - lists
     func loadFromDatabase() -> Void {
-        print("LOAD PERSISTENT DATA")
+        print("LOAD PERSISTENT DATA FOR \(currentSnack)")
         // Get context
         let context = getContext()
         
@@ -83,49 +86,22 @@ class MathematicShit{
             if results.count > 0 {
                 
                 // Go through every object
-                for result in results as! [NSManagedObject] {
+                for data in results as! [NSManagedObject] {
                     count += 1// COUNT++
                     
-                    if let url = result.value(forKey: "url") as? String {
-                        print("url: " + url)
-                    }
-                    if let name = result.value(forKey: "name") as? String {
-                        print("name: " + name)
-                    }
-                    if let kohlenhydrate = result.value(forKey: "kohlenhydrate") as? String {
-                        print("kohlenhydrate: " + kohlenhydrate)
+                    if currentSnack == data.value(forKey: "name") as? String {
+                        //Laden der Datenbank in die Zwischenablage
+                        currentMainURL = data.value(forKey: "url") as! String
+                        currentImageURL = data.value(forKey: "imageUrl") as! String
+                        currentNaehrwerte[0] = data.value(forKey: "salt") as! String
                         
-                    }
-                    if let image = result.value(forKey: "image") as? String {
-                        print("image: " + image)
-                        
-                    }
-                    if let fett = result.value(forKey: "fett") as? String {
-                        print("fett: " + fett)
-                        
-                    }
-                    if let davonZucker = result.value(forKey: "davonZucker") as? String {
-                        print("davonZucker: " + davonZucker)
-                        
-                    }
-                    if let brennwertInKJ = result.value(forKey: "brennwertInKJ") as? String {
-                        print("brennwertInKJ: " + brennwertInKJ)
-                        
-                    }
-                    if let brennwertInKcal = result.value(forKey: "brennwertInKcal") as? String {
-                        print("brennwertInKcal: " + brennwertInKcal)
-                        
-                    }
-                    if let ballaststoffe = result.value(forKey: "ballaststoffe") as? String {
-                        print("ballaststoffe: " + ballaststoffe)
-                        
-                    }
-                    if let eiweis = result.value(forKey: "eiweis") as? String {
-                        print("eiweis: " + eiweis)
-                        
-                    }
-                    if let salz = result.value(forKey: "salz") as? String {
-                        print("salz: " + salz)
+                        //Console output
+                        print("name: " + currentSnack)
+                        print("url: " + currentMainURL)
+                        print("imageUrl: " + currentImageURL)
+                        print("Shop: " + currentShop)
+                        print("Genre: " + currentGenre)
+                        print("salt: " + currentNaehrwerte[0])
                         
                     }
                 }
@@ -137,9 +113,9 @@ class MathematicShit{
     }
     
     
-    //Saves Data to Firebase
-    func saveToDatabase(url: String, name: String, shop: String, genre: String, price: String, kohlenhydrate: String, fett: String, davonZucker: String, brennwertInKJ: String, brennwertInKcal: String, eiweis: String,
-                        ballaststoffe : String, salz : String) -> Void {
+    //Saves Data to CoreData
+    func saveToDatabase(url: String,imageUrl: String, name: String, shop: String, genre: String, price: String, kohlenhydrate: String, fett: String, davonZucker: String, brennwertInKJ: String, brennwertInKcal: String, eiweis: String,
+                        ballaststoffe : String, salt : String) -> Void {
         //let list = showAllItems()
         let context = getContext()
         
@@ -152,6 +128,7 @@ class MathematicShit{
         //newSnack.setValue(iD, forKey: "iD")
         //newSnack.setValue(image, forKey: "image")
         newSnack.setValue(genre, forKey: "genre")
+        newSnack.setValue(imageUrl, forKey: "imageUrl")
         newSnack.setValue(shop, forKey: "shop")
         newSnack.setValue(price, forKey: "price")
         newSnack.setValue(kohlenhydrate, forKey: "kohlenhydrate")
@@ -161,13 +138,13 @@ class MathematicShit{
         newSnack.setValue(brennwertInKcal, forKey: "brennwertInKcal")
         newSnack.setValue(eiweis, forKey: "eiweis")
         newSnack.setValue(ballaststoffe, forKey: "ballaststoffe")
-        newSnack.setValue(salz, forKey: "salz")
+        newSnack.setValue(salt, forKey: "salt")
         
         // Trying to save the user
         do {
             try context.save()
-            print(">> [SAVED] new Snack: " + url + " | " + name + " | " + " | "  + " |...")
-            loadFromDatabase()
+            print(">> [SAVED] new Snack: " + name + "\n")
+            //loadFromDatabase()
         }
         catch {
             // PROCESS ERROR

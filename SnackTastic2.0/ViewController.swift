@@ -14,22 +14,28 @@
 //  01.08.17    Jo      Animation works but should be more easier to solve! (2d array and 2 loops)
 //  12.08.17    Jo      Added a Function in vewdidLoad to avoid url Errors
 //  24.08.17    Jo      Documentation written
-//  23.03.18    Jo      Added First Initializng, which can be seen by clicking start
+//  23.03.18    Jo      Added First Initializing, which can be seen by clicking start
 //  23.03.18    Jo      Removed shoppingCartButton and added RefreshButton with function
+
 import UIKit
 import AVFoundation //Für Musik
 
 
 //Öffentliche SnackVariable, die den gerade gezogenen Snack beinhaltet
-public var currentSnack = "ERROR"
+public var currentSnack : String = "ERROR"
+public var currentMainURL : String = "ERROR"
+public var currentImageURL : String = "ERROR"
+public var currentShop : String = "ERROR"
+public var currentGenre : String = "ERROR"
+public var currentNaehrwerte : [String] = [""]
 
 class ViewController: UIViewController {
-    //Inititalisiere Variablen
+    //Inititalisiere referenzen auf ander Klassen
     var snacklist = SnackList()
     var math = MathematicShit()
     var getInternetShit = GetInternetShit()
     
-    //Ausgabe, Buttons und so weiter
+    //Ausgabe, Buttons
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var sound: UIButton!
     @IBOutlet weak var chips: UIButton!
@@ -59,21 +65,18 @@ class ViewController: UIViewController {
     
     //---------------Refresh DataBase-START---------//
     @IBAction func refreshButton(_ sender: UIButton) {
-        //First Intitializing
+        //First delete file
+        
+        //Then Intitializing
         for (key, value) in math.showAllSnacks() {
-            //Animation Rotation
-            let imgViewRing = UIImageView(image: UIImage(named: "refresh"))
-            imgViewRing.frame = CGRect(x: 0, y: 0, width: UIImage(named: "refresh")!.size.width, height: UIImage(named: "refresh")!.size.height)
-            imgViewRing.center = CGPoint(x: self.view.frame.size.width/2.0, y: self.view.frame.size.height/2.0)
-            rotateAnimation(imageView: imgViewRing)
-            self.view.addSubview(imgViewRing)
+            currentSnack = key
+            currentMainURL = value
+            print("name:" + currentSnack + "\n" + "url: " + currentMainURL)
             
-            print("name:" + key + "\n" + "url: " + value)
-            
-            var imageURL = getInternetShit.getImageUrl(imageURL : value)
+            let imageURL = getInternetShit.getImageUrl(imageURL : value)
             print("ImageURL: " + imageURL)
-            var htmlString = getInternetShit.convertURLToHTML(value: value)
-            var info = getInternetShit.getInfoOfUrl(completeHTMLString : htmlString)
+            let completeHTMLString = getInternetShit.convertURLToHTML(value: value)
+            var info = getInternetShit.getInfoOfUrl(completeHTMLString : completeHTMLString)
             /*
              print(
              "Brennwert in kJ: \t\t\t\t\t\(info[0])\n" +
@@ -87,10 +90,15 @@ class ViewController: UIViewController {
              //"Salz in g: \(info[7])\n"
              )
              */
+            
+            //Set CurrentShop Variable
+            getInternetShit.checkShop(url: value)
+            
             math.saveToDatabase(
                 url: value,
+                imageUrl: imageURL,
                 name: key,
-                shop: "NULL",
+                shop: currentShop,
                 genre : "NULL",
                 price:"NULL",
                 kohlenhydrate: info[4],
@@ -100,29 +108,20 @@ class ViewController: UIViewController {
                 brennwertInKcal: info[1],
                 eiweis: info[6],
                 ballaststoffe: "NULL",
-                salz: "String"
+                salt: info[7]
             )
         }
     }
     
-    func rotateAnimation(imageView:UIImageView,duration: CFTimeInterval = 2.0) {
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(.pi * 2.0)
-        rotateAnimation.duration = duration
-        rotateAnimation.repeatCount = Float.greatestFiniteMagnitude;
-        
-        imageView.layer.add(rotateAnimation, forKey: nil)
-    }
     //---------------Refresh DataBase-ENDE---------//
     
-    //
+    //---------------Load DataBase-START---------//
     @IBAction func loadData(_ sender: UIButton) {
         math.loadFromDatabase()
     }
     
-    //
-    
+    //---------------Load DataBase-ENDE---------//
+
     
     //---------------Animation Definition-STRAT----//
     
@@ -539,10 +538,8 @@ class ViewController: UIViewController {
                             self.imageView.alpha = 1.0
                             //})
                         })
-                        
                     }else{
                         //Ansonsten zeige DefaultImage an
-                        
                         self.imageView.image = #imageLiteral(resourceName: "Picture.png")
                         self.imageView.alpha = 0
                         //Unnötige Animation
@@ -554,10 +551,10 @@ class ViewController: UIViewController {
                 }
             })
             task.resume()
-            resultLabel.text = "Your Snack for today is \n \(result.key) 🎉"
             
-            //Übergabe an Public Var
+            //Übergabe an Public Var und ergebnisLabel
             currentSnack = result.key
+            resultLabel.text = "Your Snack for today is \n \(result.key) 🎉"
         }
     }
     
@@ -714,7 +711,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Variable, die auf eine andere Variable in einer anderen View verweist.
         let destination : InfoViewController = segue.destination as! InfoViewController
-        destination.resultText = resultLabel.text!
+        destination.resultText = currentSnack
     }
     
     override func didReceiveMemoryWarning() {

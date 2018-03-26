@@ -15,27 +15,27 @@ class GetInternetShit{
     
     var startIndexOfImage : String = ""
     var endIndexOfImage : String  = ""
-    var staticUrlOfImage : String = ""
+    var staticImageURL : String = ""
     var startIndexOfInfo : [String] = [""]
     var endIndexOfInfo1 : String = ""
     var endIndexOfInfo2 : String = ""
     
-    //Checkt, aus welchem Markt der Snack kommt und setzt Indexe
+    //Checkt, aus welchem Markt der Snack kommt und setzt Indexe, die zum extrahieren der Nährwerte wichtig ist.
+    //Bis jetzt funktioniert nur Edeka
     func checkShop(url : String){
         if url.contains("real.de"){
+            currentShop = "Real"
             print("Shop: Real")
-            //Start- und Endindex werden aus der Html erzeugt
         }
         else if url.contains("edeka.de"){
-            print("Shop: Edeka")
-            //Start- und Endindex werden aus der Html erzeugt
+            currentShop = "Edeka"
             startIndexOfImage = "<img style=\"display:none;\" src=\"//static.edeka.de/media/products/"
             endIndexOfImage = "\" id=\"productDetailImage"
-            staticUrlOfImage = "https://static.edeka.de/media/products/"
+            staticImageURL = "https://static.edeka.de/media/products/"
             startIndexOfInfo = [
                 "<table class=\"nutrition\">",
-                "Brennwert in kJ\n</td><td class='col2'>",
-                "Brennwert in kcal\n</td><td class='col2'>",
+                "Brennwert in kJ\n</td><td class=\'col2\'>",
+                "Brennwert in kcal\n</td><td class=\'col2\'>",
                 "Fett in g\n</td><td class='col2'>",
                 "Fett in g\n</td><td class='col2'>",
                 "Fett, davon gesÃ¤ttigte FettsÃ¤uren in g\n</td><td class='col2'>",
@@ -47,11 +47,12 @@ class GetInternetShit{
             endIndexOfInfo2 = "\n</td><td class='col3'>"
         }
         else if url.contains("lidl.de"){
+            currentShop = "Lidl"
             print("Shop: Lidl")
             //Start- und Endindex werden aus der Html erzeugt
             startIndexOfImage = "data-image-index=\"0\">"
             endIndexOfImage = "\">"
-            staticUrlOfImage = "https://www.lidl.de"
+            staticImageURL = "https://www.lidl.de"
             startIndexOfInfo = [""]
             endIndexOfInfo1 = ""
         }
@@ -63,15 +64,15 @@ class GetInternetShit{
         checkShop(url : imageURL)
         //Hole kompletten HTML-Code als String
         let completeHTMLString = convertURLToHTML(value: imageURL)
-        //Schneidet erste hälfte ab
-        var myStringArr : [String] = completeHTMLString.components(separatedBy : startIndexOfImage)
-        let first: String = myStringArr [1]
-        //Schneidet zweite hälfte ab
-        let second = first.components(separatedBy : endIndexOfImage)
-        let variableUrl : String = second [0]
+        //Schneidet erste (HTML)hälfte ab
+        var firstPart : [String] = completeHTMLString.components(separatedBy : startIndexOfImage)
+        let first: String = firstPart [1]
+        //Schneidet zweite (HTML)hälfte ab
+        let secondPart = first.components(separatedBy : endIndexOfImage)
+        let variableImageURL : String = secondPart [0]
         //Zusammensetzen
-        let endUrl : String = staticUrlOfImage + variableUrl
-        return endUrl
+        let currentImageURL = staticImageURL + variableImageURL
+        return currentImageURL
     }
     
     //Bekomme aus Value(URL) den gesamten HTML-Code
@@ -107,16 +108,12 @@ class GetInternetShit{
             }
             //Schneidet bis Zur infoTabelle ab
             myStringArr = completeHTMLString.components(separatedBy : start)
+            //print(myStringArr[0])
             first = myStringArr [1]
             //Schneidet zweite hälfte ab
             second = first.components(separatedBy : ende)
-            if(i == 0){
-                break
-            }else{
-                infos += [second[0]]
-            }
+            infos += [second[0]]
         }
-        infos.remove(at: 0)
         return infos
     }
     

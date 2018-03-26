@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Nährwertangaben" id="8Da-Te-gcl">
-                                        <barButtonItem key="leftBarButtonItem" image="Back.png" id="EeF-io-ZE1">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="EeF-io-ZE1">
                                             <inset key="imageInsets" minX="2" minY="25" maxX="30" maxY="20"/>
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="IsK-or-6qX"/>
@@ -113,43 +113,43 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4f-Xx-Jgf" userLabel="info2">
-                                                <rect key="frame" x="0.0" y="53" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="53" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qva-BK-6G6" userLabel="info3">
-                                                <rect key="frame" x="0.0" y="106" width="0.0" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="106" width="35.5" height="53.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro8-c3-esl" userLabel="info4">
-                                                <rect key="frame" x="0.0" y="159.5" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="159.5" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-dg-n1K" userLabel="info5">
-                                                <rect key="frame" x="0.0" y="212.5" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="212.5" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpf-kq-LR9" userLabel="info6">
-                                                <rect key="frame" x="0.0" y="265.5" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="265.5" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-hd-n5n" userLabel="info7">
-                                                <rect key="frame" x="0.0" y="318.5" width="0.0" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="318.5" width="35.5" height="53.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ao-r1-hbk" userLabel="info8">
-                                                <rect key="frame" x="0.0" y="372" width="0.0" height="53"/>
+                                                <rect key="frame" x="0.0" y="372" width="35.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -591,6 +591,6 @@
         <image name="refresh.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kkd-Gs-rPy"/>
+        <segue reference="IsK-or-6qX"/>
     </inferredMetricsTieBreakers>
 </document>

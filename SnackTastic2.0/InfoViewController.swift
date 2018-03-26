@@ -33,17 +33,17 @@ class InfoViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Anfang Nährwerte")
+        print("Anfang Nährwerte von \(currentSnack):")
         // Do any additional setup after loading the view.
-            print(currentSnack)
+        
         //loopt durch die komplette liste und findet den KEY
-        if let entry = math.showAllSnacks().first(where: { (key, _) in key.contains(currentSnack) }) {
-            print("EntryList \(entry.value)")
+        if let url = math.showAllSnacks().first(where: { (key, _) in key.contains(currentSnack) }) {
+            print("URL von Snack: \(url.value)")
             //Hole erst HTML-String
-            let completeHTMLString : String = getInternetShit.convertURLToHTML(value: entry.value)
+            let completeHTMLString : String = getInternetShit.convertURLToHTML(value: url.value)
             //Und danach Info Aus Nährwertangaben
             let infos : [String] = getInternetShit.getInfoOfUrl(completeHTMLString : completeHTMLString)
-            label1.text = infos[0]
+            label1.text = infos[8]
             label2.text = infos[1]
             label3.text = infos[2]
             label4.text = infos[3]

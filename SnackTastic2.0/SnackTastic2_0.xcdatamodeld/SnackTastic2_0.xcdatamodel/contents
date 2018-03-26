@@ -10,14 +10,15 @@
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="iD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="kohlenhydrate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="salz" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shop" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Snacks" positionX="-3872" positionY="-10701" width="128" height="268"/>
+        <element name="Snacks" positionX="-3872" positionY="-10701" width="128" height="285"/>
     </elements>
 </model>
