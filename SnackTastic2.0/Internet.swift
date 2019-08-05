@@ -25,6 +25,7 @@ class Internet{
     
     //Checkt, aus welchem Markt der Snack kommt und setzt Indexe, die zum extrahieren der Nährwerte wichtig ist.
     //Bis jetzt funktioniert nur Edeka
+    
     func checkShop(url : String){
         if url.contains("edeka"){
             currentShop = "Edeka"
