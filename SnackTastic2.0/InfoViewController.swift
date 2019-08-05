@@ -13,62 +13,59 @@
 import Foundation
 import UIKit
 
-class InfoViewController: UIViewController{
-        
+class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+    //Variables
     var math = MathematicShit()
-    var getInternetShit = GetInternetShit()
-    var views = ViewController()
-    var resultText = String()
+    var getInternetShit = Internet()
+    
+    @IBOutlet weak var neahrwerteTableView: UITableView!
 
-   
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
-    @IBOutlet weak var label6: UILabel!
-    @IBOutlet weak var label7: UILabel!
-    @IBOutlet weak var label8: UILabel!
-    @IBOutlet weak var label9: UILabel!
+    let neahrwerte = [
+        "Brennwert in KJ",
+        "Brennwert in Kcal",
+        "Fett",
+        "Davon Gesättigte Fettsäuren",
+        "Kohlenhydrate",
+        "Davon Zucker",
+        "Einweiß",
+        "Salz"
+    ]
+    var share : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Anfang Nährwerte von \(currentSnack):")
+        //Initialize TableView
+        neahrwerteTableView.delegate = self
+        neahrwerteTableView.dataSource = self
+        print("Anfang Nährwerte von \(currentSnack):\n Anfang der Infos: \(currentInfos)")
         // Do any additional setup after loading the view.
-        
         //loopt durch die komplette liste und findet den KEY
         if let url = math.showAllSnacks().first(where: { (key, _) in key.contains(currentSnack) }) {
             print("URL von Snack: \(url.value)")
             //Hole erst HTML-String
-            let completeHTMLString : String = getInternetShit.convertURLToHTML(value: url.value)
+            let fullHTML : String = getInternetShit.extractToHTML(value: url.value)
             //Und danach Info Aus Nährwertangaben
-            let infos : [String] = getInternetShit.getInfoOfUrl(completeHTMLString : completeHTMLString)
-            label1.text = infos[8]
-            label2.text = infos[1]
-            label3.text = infos[2]
-            label4.text = infos[3]
-            label5.text = infos[4]
-            label6.text = infos[5]
-            //Ballaststoffe gibt es leider bei trinken nicht
-            label7.text = "NULL"
-            label8.text = infos[6]
-            label9.text = infos[7]
-        } else {
-            label1.text = "NULL"
-            label2.text = "NULL"
-            label3.text = "NULL"
-            label4.text = "NULL"
-            label5.text = "NULL"
-            label6.text = "NULL"
-            label7.text = "NULL"
-            label8.text = "NULL"
-            label9.text = "NULL"
+            let infos = getInternetShit.getInfoOfUrl(fullHTML : fullHTML)
+            currentInfos.remove(at: 0)
+            currentInfos.remove(at: 0)
+            print("\(currentInfos) \n")
+            share = currentInfos
         }
-        
-        
-        
     }
-  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return neahrwerte.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = neahrwerteTableView.dequeueReusableCell(withIdentifier: "cell")
+        
+        cell?.textLabel?.text = neahrwerte[indexPath.row]
+        cell?.detailTextLabel?.text = share[indexPath.row]
+        
+        return cell!
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

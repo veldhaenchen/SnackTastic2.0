@@ -11,11 +11,14 @@
 
 import Foundation
 
-class GetInternetShit{
-    
+
+public var currentInfos : [String] = ["ERROR"]
+
+class Internet{
+
+    var staticImageURL : String = ""
     var startIndexOfImage : String = ""
     var endIndexOfImage : String  = ""
-    var staticImageURL : String = ""
     var startIndexOfInfo : [String] = [""]
     var endIndexOfInfo1 : String = ""
     var endIndexOfInfo2 : String = ""
@@ -23,39 +26,42 @@ class GetInternetShit{
     //Checkt, aus welchem Markt der Snack kommt und setzt Indexe, die zum extrahieren der Nährwerte wichtig ist.
     //Bis jetzt funktioniert nur Edeka
     func checkShop(url : String){
-        if url.contains("real.de"){
-            currentShop = "Real"
-            print("Shop: Real")
-        }
-        else if url.contains("edeka.de"){
+        if url.contains("edeka"){
             currentShop = "Edeka"
             startIndexOfImage = "<img style=\"display:none;\" src=\"//static.edeka.de/media/products/"
             endIndexOfImage = "\" id=\"productDetailImage"
             staticImageURL = "https://static.edeka.de/media/products/"
             startIndexOfInfo = [
                 "<table class=\"nutrition\">",
-                "Brennwert in kJ\n</td><td class=\'col2\'>",
-                "Brennwert in kcal\n</td><td class=\'col2\'>",
-                "Fett in g\n</td><td class='col2'>",
+                "Brennwert in kJ\n</td><td class='col2'>",
+                "Brennwert in kcal\n</td><td class='col2'>",
                 "Fett in g\n</td><td class='col2'>",
                 "Fett, davon gesÃ¤ttigte FettsÃ¤uren in g\n</td><td class='col2'>",
+                //"Ballaststoffe in g\n</td><td class=\'col2\'>", gibt es bei trinken nicht (EDEKA)
                 "Kohlenhydrate in g\n</td><td class='col2'>",
                 "Kohlenhydrate, davon Zucker in g\n</td><td class=\'col2\'>",
-                "<td class='col1'>EiweiÃ in g\n</td><td class='col2'>"
+                "<td class='col1'>EiweiÃ in g\n</td><td class='col2'>",
+                "<td class='col1'>Salz in g\n</td><td class='col2'>"
             ]
             endIndexOfInfo1 = "</table>"
             endIndexOfInfo2 = "\n</td><td class='col3'>"
         }
-        else if url.contains("lidl.de"){
-            currentShop = "Lidl"
-            print("Shop: Lidl")
-            //Start- und Endindex werden aus der Html erzeugt
-            startIndexOfImage = "data-image-index=\"0\">"
-            endIndexOfImage = "\">"
-            staticImageURL = "https://www.lidl.de"
-            startIndexOfInfo = [""]
-            endIndexOfInfo1 = ""
-        }
+        /*
+         else if url.contains("real.de"){
+         currentShop = "Real"
+         print("Shop: Real")
+         }
+         else if url.contains("lidl.de"){
+         currentShop = "Lidl"
+         print("Shop: Lidl")
+         //Start- und Endindex werden aus der Html erzeugt
+         startIndexOfImage = "data-image-index=\"0\">"
+         endIndexOfImage = "\">"
+         staticImageURL = "https://www.lidl.de"
+         startIndexOfInfo = [""]
+         endIndexOfInfo1 = ""
+         }
+         */
     }
     
     //Returned das IMAGE-URL
@@ -63,7 +69,7 @@ class GetInternetShit{
         //Setzt StartIndexe
         checkShop(url : imageURL)
         //Hole kompletten HTML-Code als String
-        let completeHTMLString = convertURLToHTML(value: imageURL)
+        let completeHTMLString = extractToHTML(value: imageURL)
         //Schneidet erste (HTML)hälfte ab
         var firstPart : [String] = completeHTMLString.components(separatedBy : startIndexOfImage)
         let first: String = firstPart [1]
@@ -76,24 +82,25 @@ class GetInternetShit{
     }
     
     //Bekomme aus Value(URL) den gesamten HTML-Code
-    func convertURLToHTML(value : String) -> String {
-        var completeHTMLString : String = ""
+    func extractToHTML(value : String) -> String {
+        var fullHTML : String = ""
         //Überprüfung der URL, ob sie existiert
-        guard let myURL = URL(string: value) else {
+        guard let url = URL(string: value) else {
             return "Error: \(value) doesn't seem to be a valid URL"
         }
         do {
             //Holt sich gesamten HTML-CODE aus seite und vergleicht, ob der Snack in dem HTML beinhaltet ist.
-            completeHTMLString = try String(contentsOf: myURL, encoding: .ascii)
+            fullHTML = try String(contentsOf: url, encoding: .ascii)
         } catch let error {
             print("Error: \(error)")
         }
-        return completeHTMLString
+        return fullHTML
     }
     
     //Returned alle Nährwertangaben
-    func getInfoOfUrl(completeHTMLString : String) -> [String]{
-        var infos : [String] = []
+    func getInfoOfUrl(fullHTML : String) -> [String]{
+        print("-------getInfoOfUrl-START------")
+        checkShop(url : fullHTML)
         var first = ""
         var second = [""]
         var myStringArr = [""]
@@ -107,14 +114,18 @@ class GetInternetShit{
                 ende = endIndexOfInfo2
             }
             //Schneidet bis Zur infoTabelle ab
-            myStringArr = completeHTMLString.components(separatedBy : start)
-            //print(myStringArr[0])
+            myStringArr = fullHTML.components(separatedBy : start)
             first = myStringArr [1]
             //Schneidet zweite hälfte ab
             second = first.components(separatedBy : ende)
-            infos += [second[0]]
+            if(i == 0){
+                break
+                
+            }else{
+                currentInfos += [second[0]]
+            }
         }
-        return infos
+        return currentInfos
     }
     
     

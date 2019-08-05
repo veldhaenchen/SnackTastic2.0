@@ -21,14 +21,14 @@ class MathematicShit{
     //variablen, die auf die anderen Klassen referenzieren
     var showAll = SnackList()
     var showAllImages = SnackList()
-    var getInternetShit = GetInternetShit()
+    var getInternetShit = Internet()
     
     //funktion um Zufallszahl zu berechnen.
-    func getRandomSnack(combinedSnackList: [String : String], sum : Int) -> (key : String, value : String) {
+    func getRandomSnack(combinedSnackList: [String : String]) -> (key : String, value : String) {
         //Check, ob liste leer ist
         if (combinedSnackList.isEmpty) {
             //Wenn ja dann,
-            return ("Ups, da ist etwas schief gelaufen...😕", "")
+            return ("Ups, da ist etwas schief gelaufen...😰🍕❌", "")
         }else{
             //Ansonsten Zufallszahl generieren
             let randomNum: Int = Int(arc4random_uniform(UInt32(combinedSnackList.count)))
@@ -63,9 +63,6 @@ class MathematicShit{
         // Access the database within AppDelegate (Core Data)
         return appDelegate.persistentContainer.viewContext
     }
-    
-    
-    
     
     // Loading DataBase into the entity - lists
     func loadFromDatabase() -> Void {
@@ -108,7 +105,6 @@ class MathematicShit{
             }
         }
         catch {
-            
         }
     }
     
@@ -140,11 +136,10 @@ class MathematicShit{
         newSnack.setValue(ballaststoffe, forKey: "ballaststoffe")
         newSnack.setValue(salt, forKey: "salt")
         
-        // Trying to save the user
+        // Trying to save the snack
         do {
             try context.save()
             print(">> [SAVED] new Snack: " + name + "\n")
-            //loadFromDatabase()
         }
         catch {
             // PROCESS ERROR

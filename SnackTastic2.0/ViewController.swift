@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     //Inititalisiere referenzen auf ander Klassen
     var snacklist = SnackList()
     var math = MathematicShit()
-    var getInternetShit = GetInternetShit()
+    var getInternetShit = Internet()
     
     //Ausgabe, Buttons
     @IBOutlet weak var imageView: UIImageView!
@@ -69,30 +69,16 @@ class ViewController: UIViewController {
         
         //Then Intitializing
         for (key, value) in math.showAllSnacks() {
+            //Set CurrentShop Variable
+            getInternetShit.checkShop(url: value)
             currentSnack = key
             currentMainURL = value
             print("name:" + currentSnack + "\n" + "url: " + currentMainURL)
             
             let imageURL = getInternetShit.getImageUrl(imageURL : value)
             print("ImageURL: " + imageURL)
-            let completeHTMLString = getInternetShit.convertURLToHTML(value: value)
-            var info = getInternetShit.getInfoOfUrl(completeHTMLString : completeHTMLString)
-            /*
-             print(
-             "Brennwert in kJ: \t\t\t\t\t\(info[0])\n" +
-             "Brennwert in kcal: \t\t\t\t\t\(info[1])\n" +
-             "Fett in g: \t\t\t\t\t\t\t\(info[2])\n" +
-             "Davon gesättigte Fettsäuren in g: \t\(info[3])\n" +
-             "Kohlenhydrate in g: \t\t\t\t\(info[4])\n" +
-             "davon Zucker in g: \t\t\t\t\t\(info[5])\n" +
-             //"Ballaststoffe in g: \(info[6])\n"
-             "Eiweiß in g: \t\t\t\t\t\t\(info[6])\n\n"
-             //"Salz in g: \(info[7])\n"
-             )
-             */
-            
-            //Set CurrentShop Variable
-            getInternetShit.checkShop(url: value)
+            let completeHTMLString = getInternetShit.extractToHTML(value: value)
+            var info = getInternetShit.getInfoOfUrl(fullHTML : completeHTMLString)
             
             math.saveToDatabase(
                 url: value,
@@ -109,6 +95,7 @@ class ViewController: UIViewController {
                 eiweis: info[6],
                 ballaststoffe: "NULL",
                 salt: info[7]
+
             )
         }
     }
@@ -493,24 +480,24 @@ class ViewController: UIViewController {
     //Checkt, welche Buttons grün sind und füllt dementsprechend eine Auswahlliste
     @IBAction func generate(_ sender: UIButton) {
         //Leere Liste mit kommenden Snacks
-        var combine : [String : String] = [:]
+        var randomSnacks : [String : String] = [:]
         if(chips.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1) ){
-            snacklist.chipsList.forEach { (k,v) in combine[k] = v }
+            snacklist.chipsList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(fruchtgummi.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
-            snacklist.fruchtgummiList.forEach { (k,v) in combine[k] = v }
+            snacklist.fruchtgummiList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(schokolade.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
-            snacklist.schokoladeList.forEach { (k,v) in combine[k] = v }
+            snacklist.schokoladeList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(gebaeck.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
-            snacklist.gebaeckList.forEach { (k,v) in combine[k] = v }
+            snacklist.gebaeckList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(trinken.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
-            snacklist.getraenkeList.forEach { (k,v) in combine[k] = v }
+            snacklist.getraenkeList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(sonstiges.backgroundColor == #colorLiteral(red: 0.1764705882, green: 0.7647058824, blue: 0.6392156863, alpha: 1)){
-            snacklist.sonstigesList.forEach { (k,v) in combine[k] = v }
+            snacklist.sonstigesList.forEach { (k,v) in randomSnacks[k] = v }
         }
         if(chips.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && fruchtgummi.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && schokolade.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && gebaeck.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && trinken.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1) && sonstiges.backgroundColor == #colorLiteral(red: 0.9333333333, green: 0.3019607843, blue: 0.1803921569, alpha: 1)){
             resultLabel.text = "Es muss mindestens ein Feld ausgewählt sein!"
@@ -519,7 +506,7 @@ class ViewController: UIViewController {
             
         }else{
             //Bekommen des Resultstrings
-            let result  = math.getRandomSnack(combinedSnackList: combine, sum: combine.count)
+            let result  = math.getRandomSnack(combinedSnackList: randomSnacks)
             let url : URL = URL(string: result.value)!
             let session = URLSession.shared
             //Bekomme Bild rein
@@ -708,12 +695,13 @@ class ViewController: UIViewController {
     }
     
     //Bekomme alle variablen aus der Eigentlichen View
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Variable, die auf eine andere Variable in einer anderen View verweist.
         let destination : InfoViewController = segue.destination as! InfoViewController
         destination.resultText = currentSnack
     }
-    
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
