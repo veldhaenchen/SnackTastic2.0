@@ -8,7 +8,7 @@
 //  Datum       Name    Action
 //  11.08.17    Jo      readHTML und getImageUrl fertig und dokumentation erstellt
 //  22.03.18    Jo      CoreData inserted
-//Es wird von oben nach unten die Methoden in einer Reihe ausgeführt
+//  Es wird von oben nach unten die Methoden in einer Reihe ausgeführt
 
 import Foundation
 import UIKit
@@ -27,15 +27,13 @@ class MathematicShit{
     func getRandomSnack(combinedSnackList: [String : String]) -> (key : String, value : String) {
         //Check, ob liste leer ist
         if (combinedSnackList.isEmpty) {
-            //Wenn ja dann,
             return ("Ups, da ist etwas schief gelaufen...😰🍕❌", "")
         }else{
-            //Ansonsten Zufallszahl generieren
             let randomNum: Int = Int(arc4random_uniform(UInt32(combinedSnackList.count)))
-            //setzen des ZufallsSnacks
+
             let key : String = Array(combinedSnackList.keys)[randomNum]
             let value : String = combinedSnackList[key]!
-            //ließ imageUrl aus HTML-Seite heraus
+
             currentSnack = key
             let imageURL = getInternetShit.getImageUrl(imageURL : value)
             return (key, imageURL)
